@@ -54,7 +54,25 @@
 			</div>
 			<button type="button" onclick="i='hw2';if(document.getElementById(i).style.display=='none'){document.getElementById(i).style.display=''}else{document.getElementById(i).style.display='none'}">Homework 2</button><br>
 			<div id="hw2" style="display:">
-				Homework 2 not finished yet!<br>
+				(using 1 grace day)
+				<h2>3D cloth simulation</h2>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/7oDlYxzmpgg"></iframe><br>
+				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/sketch_fabric">Source</a><br>
+				3D cloth simulation using mass-spring system to determine the force applied at each point in the cloth compared to its immediate neighbors, and that force is used in determining the subsequent position using Euler's equations of motion over time. The sphere moves along the Z-axis, and when intersecting the points of the cloth pushes those points out of the way in a spherical manner.<br>
+				Use WASD to move forward, back, and side to side, drag mouse to rotate view, and move mouse left or right to slide the sphere on its track.
+				<p>(5) Video documenting system and highlighs features<br>
+				(5) 3D rendering, user controlled camera<br>
+				(30) Cloth simulation(mass-spring)<br>
+				(10) Interaction with spherical objects<br>
+				(10) Real time user interaction with sim<br>
+				(10) Textured cloth</p>
+				<h2>1D water simulation.</h2>
+				<img src="http://puu.sh/kO08K/028f7b7544.png"><br>
+				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/sketch_water">Source</a><br>
+				Tried the Shallow 1D integrated water simulation from the slides, kept getting NaN errors. Can't figure out where from, I've tried testing for negatives in the sqrts and deviding by 0 errors and checking for boundary conditions, nothing is fixing the problem.<br>
+				<p>(5) Realtime Rendering<br>
+				(20) 1D Water (shallow water equation)<br>
+				3D rendering, user controlled camera</p>
 			</div>
 		</div>
 	</body>
