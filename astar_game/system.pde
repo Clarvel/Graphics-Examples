@@ -1,5 +1,5 @@
 
-class Object extends Renderable{
+class Object{
     color c;
     PVector pos;
     float radius;
@@ -10,6 +10,7 @@ class Object extends Renderable{
         c = color(0);
         
     }
+    boolean update(){return false;}
     void render(){
         noStroke();
         pushMatrix();
@@ -31,18 +32,22 @@ class Movable extends Object{
         speed = 1;
     }
 
-    void update(float fr){
+    boolean update(float fr){
         if(path != null && path.size() > 0){
             PVector travel = PVector.sub(path.get(0), pos);
             float movespeed = travel.mag();
             if(movespeed <= speed){ // if I am reaching or passing the point, remove point from path
                 path.remove(0);
+                pos.add(travel.normalize().mult(movespeed));
+                return true;
             }else{
                 movespeed = speed;
             }
 
             pos.add(travel.normalize().mult(movespeed));
+            return false;
         }
+        return true;
     }
 
 
@@ -81,7 +86,8 @@ class System extends Renderable{
     
     float defaultRadius = 5;
     boolean begun = false;
-    
+    int time;
+
     System(PVector d, int obstacleCount){
         this.begun = false;
         dimensions = d;
@@ -118,8 +124,11 @@ class System extends Renderable{
     }
 
     void update(float dt){
-        aiPiece.update(dt);
-        playerPiece.update(dt);
+        if(begun){
+            if(aiPiece.update(dt)){
+                aiPiece.path = map.solve(aiPiece.pos, playerPiece.pos);
+            }
+        }
     }
 
     void render(){
@@ -130,11 +139,16 @@ class System extends Renderable{
     }
 
     void begin(){
-        if(this.begun == false){
+        if(!this.begun){
+            playerPiece.pos = new PVector(0, 0, 0);
             this.begun = true;
             println("beginnging");
-            aiPiece.path = map.solve(aiPiece.pos, playerPiece.pos);
+            time = millis();
         }
+    }
+    void stop(){
+        begun = false;
+        println("You lasted " + str(millis()-time) + "milliseconds");
     }
     void placeStart(PVector pos){
         aiPiece.pos.add(pos);

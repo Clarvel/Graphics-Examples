@@ -47,7 +47,7 @@ class Rpm{
     	unvisited = new ArrayList<Point>();
 		// generate points
 		//unvisited.add(new Point(new PVector(size.x/2, size.y/2, size.z/2)));
-		for(int a = 0; a < 1000; a++){
+		for(int a = 0; a < 100; a++){
 			Point p = new Point(new PVector(random(size.x), random(size.y), random(size.z)));
 			boolean hit = false;
 			for(Object ob : o){
@@ -105,12 +105,12 @@ class Rpm{
 		}
 		unvisited.add(s);
 
-		ArrayList<PVector> path = astar();
+		ArrayList<PVector> path = dijkstra();
 
 		println(path);
 		println("Found in " + str(millis()-m) + " milliseconds");
-		unvisited.remove(e);
-		unvisited.remove(s);
+		//unvisited.remove(e);
+		//unvisited.remove(s);
 		return path;
 	}
 
@@ -217,7 +217,7 @@ class Rpm{
 	        sphere(0.5);
 	        popMatrix();
 	        for(Point n : p.neighbors){
-	        	//line(p.pos.x, p.pos.y, p.pos.z, n.pos.x, n.pos.y, n.pos.z);
+	        	line(p.pos.x, p.pos.y, p.pos.z, n.pos.x, n.pos.y, n.pos.z);
 	        }
 		}
 	}
