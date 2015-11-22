@@ -77,8 +77,6 @@ void draw () {
 		PVector r1 = new PVector(0, 0, 0); // RULE 1: boids fly to perceived flock center
 		PVector r2 = new PVector(0, 0, 0); // RULE 2: boids avoid other boids
 		PVector r3 = new PVector(0, 0, 0); // RULE 3: boids match flock direction
-		PVector r4 = new PVector(0, 0, 0); // RULE 4: boids want to travel to some point
-		PVector r5 = new PVector(0, 0, 0); // RULE 5: object avoidance
 
 		int nearcount = 0;
 		for(Bird bb : birds){

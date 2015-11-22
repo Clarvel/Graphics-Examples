@@ -81,7 +81,7 @@
 			</div>
 
 			<button type="button" onclick="i='hw3';if(document.getElementById(i).style.display==''){document.getElementById(i).style.display=''}else{document.getElementById(i).style.display='none'}">Homework 3</button><br>
-			<div id="hw3" style="display:">
+			<div id="hw3" style="display:none">
 				(using 2 late days)
 				<h2>Djikstra's algorithm with Obstacle</h2>
 				<iframe width="640" height="480" src="https://www.youtube.com/embed/pq0inPEQaUw"></iframe><br>
@@ -105,12 +105,49 @@
 			</div>
 
 			<button type="button" onclick="i='hw4';if(document.getElementById(i).style.display=='none'){document.getElementById(i).style.display=''}else{document.getElementById(i).style.display='none'}">Homework 4</button><br>
-			<div id="hw4" style="display:none">
-				<h2></h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/">Source</a><br>
-				Description.<br>
-				<p>(0) Points</p>
+			<div id="hw4" style="display:">
+				(Using 1 grace day)
+				<h2>Crowd Simulation</h2>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/-tAxrpoO1zs"></iframe><br>
+				3D flocking algorithm using Boids simulation model. Each boid is represented as a blue sphere with a smaller green sphere used to visually track the direction vector. The 3 rules used are:<br>
+				1. boids fly to perceived flock center<br>
+				2. boids avoid other boids<br>
+				3. boids match flock direction<br>
+				Flock center and direction are calculated by looking at each boids' local neighbors, changing the size of this parameter changes the overall flock sizes.<br>
+				Avoiding other boids uses a 1/x function to determine the multiplier applied to the vector between 2 boids. This means the closer the boids are, the more 'force' repells them. The nearby boids calculation for this rule uses a smaller size than the first and third rules.<br>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/YJmGi0JbRNE"></iframe><br>
+				In this video we see direction propagation inside a boids flock, as it starts in one end of the formation and propagates throughout. Notice how the boids maintain a respectable distance from each other.<br>
+				<br>
+				<h3>Where it Breaks Down</h3>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/8zLuMWKqZ8M"></iframe><br>
+				This video shows 2 boids in direct opposition repelling each other perfecty, as there are no forces to apply variation that would allow them to align.<br>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/Vnkp00CM2OY"></iframe><br>
+				This video shows the 'strength' of the repelling force, these boids are not perfectly aligned, yet as they get closer the repelling force of rule 2 and the flock direction variable from rule 3 combine to make he boids swerve away from eachother instead of combining.<br>
+				In addition, the boids jitter a great deal, especially when Rule 2 comes into play. This could be fixed by implementing a maximum turning speed for each boid which should help smooth the way they turn, and implement a better algorithm for dealing with boids intruding too far into each others' space.<br>
+				<br>
+				<h3>Obstacles and Pathfinding</h3>
+
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/vgeY1NwckBI"></iframe><br>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/IMey6_tiixA"></iframe><br>
+				In these videos, black obstacles have been added, along with the a* algorithm from homework 3. To have the boids properly interact with these new objects, 2 new rules are required:<br>
+				4. boids want to travel to some point on the path<br>
+				5. boids want to avoid objects<br>
+				Rule 4 is simply the direction vector pointing to the next point on the path returned by the A* algorithm, and Rule 5 is simply a copy of rule 2, only instead of summing the local boids, uses all objects.
+				One global path is used for all boids, updated to path to a random point in the obstacle maze whenever the end is reached. This path is shown as a red line, a small red sphere marking the current node the boids are pathing to. Notice how even with these new rules, the boids still travel in flocks.<br>
+				<br>
+				<h3>Where it Breaks Down</h3>
+
+				You may have noticed in the earlier videos, boids will get stuck on the black obstacles, bouncing back and forth on them, slowly moving around it. This si due to the other Rules upon the boid overpowering Rule 5 until Rule 5 overpowers them, creating a very fast flip-flop effect in the direction vector.<br>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/CHf1cKatl48"></iframe><br>
+				Very occasionally, the point picked randomly by the A* algorithm will situate the boids such that the function used to determine whether the goal is reached will fail to register. This function simply determines if for each boid if the distance from the boid to its perceived flock center is larger than the distance from the current path node to the perceived flock center. This will produce jittery behaviour as the boids try to situate themselves as close as possible to the node wild obeying all the other rules.<br>
+				<br>
+				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/boids">Boids Source</a><br>
+				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/boids_obstacles_pathing">Boids with Obstacles Source</a><br>
+				<p>(90) Requirements: Implement a local interaction/collision avoidance technique (Boids, Helbing, RVO/ORCA, TTC-forces, etc.). Find 2 or 3 scenarios showing interesting interactions between the agents. Implement a global navigation strategy for the agents (PRM/A*, RRT, etc.). Your roadmap needs to account for the extent of the agents. Show 2 or 3 scenarios of groups of agents successfully navigating through environments with local minima. Find a scenario where your overall simulation breaks and produces odd behavior.<br>
+				(10) Support full 3D navigation (e.g., flocking planes with 3D obstacles)</p>
+				<br>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/WNAufgNfHjE"></iframe><br>
+				They're kinda relaxing to watch...<br>
 			</div>
 		</div>
 	</body>
