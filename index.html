@@ -1,153 +1,116 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="description" content="CSCI 5611 Animations">
-		<meta name="keywords" content="Computer Science, Graphics, CSCI 5611">
-		<meta name="author" content="Clarvel">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Matthew Russell</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 
-	<body>
-		<div id="main">
-			<h1>Matthew Russell's page o' graphics for 5611:</h1>
-			<button type="button" onclick="i='hw1';if(document.getElementById(i).style.display=='none'){document.getElementById(i).style.display=''}else{document.getElementById(i).style.display='none'}">Homework 1</button><br>
-			<div id="hw1" style="display:none">
-				<h2>Bouncing Ball</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/Hj8wKIY9sSk"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/ball%20bounce">Source</a><br>
-				Ball bouncing in 3D in openGL, constrained in the x, y, z directions at a maximum ceiling and floor. If the ball would have passed that direction maximum, it's position and velocity are set to simulate boucing. Eulerian integration is used to solve for the position and velocity.
-				On each bounce, the ball's rotation is set based on the velocity not in the impact direction.
-				<p>(15) Ball bouncing on floor<br>
-				(5) 3D implementation<br>
-				(5) Realtime rendering<br>
-				(5) Videos<br>
-				(5) Impact rotations</p>
+	<body class="container-fluid">
+		<div id="content" class="row foot-pad">
+			<div class="col-xs-12">
+				<div id="header" class="row">
+					<div class="col-xs-12">
+						<h1>Graphics Examples</h1>
+					</div>
+				</div>
 
-				<h2>Fountain</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/WxjsbBi3Bp8"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/waterfall">Source</a><br>
-				Water fountain in 3D, with a user controlled camera. Move left/right/forward/back with a/d/w/s respecively. Click and drag the mouse move the viewing center. Uses a textured and colored sprite image at each point.
-				<p>(15) Water fountain or spout simulation<br>
-				(5) 3D user controlled camera<br>
-				(5) Textured particles<br>
-				3D implementation<br>
-				Realtime rendering<br>
-				Videos</p>
+				<div class="row">
+					<div id="nav" class="col-sm-2 col-xs-3">
+						<ul class="nav nav-pills nav-stacked">
+							<li class="active"><a data-toggle="pill" href="#bouncingball">Bouncing Ball</a></li>
+							<li><a data-toggle="pill" href="#particlefountain">Particle Fountain</a></li>
+							<li><a data-toggle="pill" href="#fire">Fire</a></li>
+							<li><a data-toggle="pill" href="#firework">Firework</a></li>
+							<li><a data-toggle="pill" href="#dijstrapathing">Dijkstra's Pathing</a></li>
+							<li><a data-toggle="pill" href="#amultipleobstacles">A* multiple Obstacles</a></li>
+							<li><a data-toggle="pill" href="#aurora">Aurora</a></li>
+							<li><a data-toggle="pill" href="#boidspathing">3D Boids Pathing</a></li>
 
-				<h2>Fire</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/ouVOaUYPuNE"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/fire">Source</a><br>
-				Fire simulation very similar to fountain simulation only with altered gravity and initial velocity, and changes color as the particle ages. Particles also fade out as they age.
-				<p>(15) Fire simulation<br>
-				(5) Translucent particles<br>
-				Realtime rendering<br>
-				Textured Particles<br>
-				Videos</p>
+						</ul>
+					</div>
 
-				<h2>Firework</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/sBJa7QclpLY"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/firework">Source</a><br>
-				Fireworks simulation as a combination of a moving particle emitter and a radial particle emitter with color changing particles. Audio effects are keyed to play when the firework starts and when it changes from the moving smoke emitter to stationary radial emitter.
-				<p>(15) Fireworks simulation<br>
-				(10) Simulation-driven Audio<br>
-				(15) Smoke simulation<br>
-				(5) Art submission<br>
-				Realtime rendering<br>
-				Textured particles<br>
-				Videos</p>
-			</div>
+					<div id="content" class="tab-content col-sm-8 col-xs-9">
+						<div id="bouncingball" class="tab-pane fade in active">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/Hj8wKIY9sSk"></iframe><br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/ball%20bounce">Source</a><br>
+							Ball bouncing in 3D in openGL, constrained in the x, y, z directions at a maximum ceiling and floor. If the ball would have passed that direction maximum, it's position and velocity are set to simulate boucing. Eulerian integration is used to solve for the position and velocity.
+							On each bounce, the ball's rotation is set based on the velocity not in the impact direction.
+						</div>
+						<div id="particlefountain" class="tab-pane fade">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/WxjsbBi3Bp8"></iframe><br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/waterfall">Source</a><br>
+							Water fountain in 3D, with a user controlled camera. Move left/right/forward/back with a/d/w/s respecively. Click and drag the mouse move the viewing center. Uses a textured and colored sprite image at each point.
+						</div>
+						<div id="fire" class="tab-pane fade">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/ouVOaUYPuNE"></iframe><br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/fire">Source</a><br>
+							Fire simulation very similar to fountain simulation only with altered gravity and initial velocity, and changes color as the particle ages. Particles also fade out as they age.
+						</div>
+						<div id="firework" class="tab-pane fade">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/sBJa7QclpLY"></iframe><br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/firework">Source</a><br>
+							Fireworks simulation as a combination of a moving particle emitter and a radial particle emitter with color changing particles. Audio effects are keyed to play when the firework starts and when it changes from the moving smoke emitter to stationary radial emitter.
+						</div>
+						<div id="dijstrapathing" class="tab-pane fade">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/pq0inPEQaUw"></iframe><br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/dijkstra_obj">Source</a><br>
+							Using Dijkstra's algorithm and a Probabilistic Road Map to navigate a 3D space. The large green sphere is the goal, the large red sphere is the AI, the large black sphere is an obstacle, and the small green spheres are the points found by the probabilistic road map. Use WASD to move the camera in mode 0, the AI in mode 1, and the goal in mode 2. Drag the mouse to rotate camera. Set modes by pressing the corresponding number. Press enter or return to have the AI search. I accidentally made the obstacle too large, but this does not impact the algorithm much.
+						</div>
+						<div id="amultipleobstacles" class="tab-pane fade">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/WCgzUL_ksjU"></iframe><br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/dijkstra_astar_comp">Source</a><br>
+							Using Dijkstra's algorithm and Astar with a Probabilistic Road Map to navigate a 3D space. The large green sphere is the goal, the large red sphere is the AI, the large black sphere are obstacles, and the small blue spheres are the points found by the probabilistic road map. Use WASD to move the camera in mode 0, the AI in mode 1, and the goal in mode 2. Drag the mouse to rotate camera. Set modes by pressing the corresponding number. Press enter or return to have the AI search. Press r to reset the AI's position. Press spacebar to swap between using dijkstra's algorithm and astar. In the video, both algorithms find the same path, but Astar ound it in 23 miliseconds, while dijkstra's algorithm found it in 88 milliseconds.
+						</div>
+						<div id="aurora" class="tab-pane fade">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/1PXMQmDinHA"></iframe><br>
+							Built off of plasma effects, this is a two color aurora proof of concept.<br>
+							For more on plasma effect generation:
+							<a href="http://www.bidouille.org/prog/plasma">bidouille.org</a>, 
+							<a href="http://lodev.org/cgtutor/plasma.html">lodev.org</a>
+						</div>
+						<div id="boidspathing" class="tab-pane fade">
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/-tAxrpoO1zs"></iframe><br>
+							3D flocking algorithm using Boids simulation model. Each boid is represented as a blue sphere with a smaller green sphere used to visually track the direction vector. The 3 rules used are:<br>
+							1. boids fly to perceived flock center<br>
+							2. boids avoid other boids<br>
+							3. boids match flock direction<br>
+							Flock center and direction are calculated by looking at each boids' local neighbors, changing the size of this parameter changes the overall flock sizes.<br>
+							Avoiding other boids uses a 1/x function to determine the multiplier applied to the vector between 2 boids. This means the closer the boids are, the more 'force' repells them. The nearby boids calculation for this rule uses a smaller size than the first and third rules.<br>
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/YJmGi0JbRNE"></iframe><br>
+							In this video we see direction propagation inside a boids flock, as it starts in one end of the formation and propagates throughout. Notice how the boids maintain a respectable distance from each other.<br>
+							<br>
+							<h3>Where it Breaks Down</h3>
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/8zLuMWKqZ8M"></iframe><br>
+							This video shows 2 boids in direct opposition repelling each other perfecty, as there are no forces to apply variation that would allow them to align.<br>
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/Vnkp00CM2OY"></iframe><br>
+							This video shows the 'strength' of the repelling force, these boids are not perfectly aligned, yet as they get closer the repelling force of rule 2 and the flock direction variable from rule 3 combine to make he boids swerve away from eachother instead of combining.<br>
+							In addition, the boids jitter a great deal, especially when Rule 2 comes into play. This could be fixed by implementing a maximum turning speed for each boid which should help smooth the way they turn, and implement a better algorithm for dealing with boids intruding too far into each others' space.<br>
+							<br>
+							<h3>Obstacles and Pathfinding</h3>
 
-			<button type="button" onclick="i='hw2';if(document.getElementById(i).style.display=='none'){document.getElementById(i).style.display=''}else{document.getElementById(i).style.display='none'}">Homework 2</button><br>
-			<div id="hw2" style="display:none">
-				(using 1 grace day)
-				<h2>3D cloth simulation</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/7oDlYxzmpgg"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/sketch_fabric">Source</a><br>
-				3D cloth simulation using mass-spring system to determine the force applied at each point in the cloth compared to its immediate neighbors, and that force is used in determining the subsequent position using Euler's equations of motion over time. The sphere moves along the Z-axis, and when intersecting the points of the cloth pushes those points out of the way in a spherical manner.<br>
-				Use WASD to move forward, back, and side to side, drag mouse to rotate view, and move mouse left or right to slide the sphere on its track.
-				<p>(5) Video documenting system and highlighs features<br>
-				(5) 3D rendering, user controlled camera<br>
-				(30) Cloth simulation(mass-spring)<br>
-				(10) Interaction with spherical objects<br>
-				(10) Real time user interaction with sim<br>
-				(10) Textured cloth</p>
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/vgeY1NwckBI"></iframe><br>
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/IMey6_tiixA"></iframe><br>
+							In these videos, black obstacles have been added, along with the a* algorithm from homework 3. To have the boids properly interact with these new objects, 2 new rules are required:<br>
+							4. boids want to travel to some point on the path<br>
+							5. boids want to avoid objects<br>
+							Rule 4 is simply the direction vector pointing to the next point on the path returned by the A* algorithm, and Rule 5 is simply a copy of rule 2, only instead of summing the local boids, uses all objects.
+							One global path is used for all boids, updated to path to a random point in the obstacle maze whenever the end is reached. This path is shown as a red line, a small red sphere marking the current node the boids are pathing to. Notice how even with these new rules, the boids still travel in flocks.<br>
+							<br>
+							<h3>Where it Breaks Down</h3>
 
-				<h2>1D water simulation.</h2>
-				<img src="http://puu.sh/kO08K/028f7b7544.png"><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/sketch_water">Source</a><br>
-				Tried the Shallow 1D integrated water simulation from the slides, kept getting NaN errors. Can't figure out where from, I've tried testing for negatives in the sqrts and deviding by 0 errors and checking for boundary conditions, nothing is fixing the problem.<br>
-				<p>(5) Realtime Rendering<br>
-				(20) 1D Water (shallow water equation)<br>
-				3D rendering, user controlled camera</p>
-			</div>
-
-			<button type="button" onclick="i='hw3';if(document.getElementById(i).style.display==''){document.getElementById(i).style.display=''}else{document.getElementById(i).style.display='none'}">Homework 3</button><br>
-			<div id="hw3" style="display:none">
-				(using 2 late days)
-				<h2>Djikstra's algorithm with Obstacle</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/pq0inPEQaUw"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/dijkstra_obj">Source</a><br>
-				Using Dijkstra's algorithm and a Probabilistic Road Map to navigate a 3D space. The large green sphere is the goal, the large red sphere is the ai, the large black sphere is an obstacle, and the small green spheres are the points found by the probabilistic road map. Use WASD to move the camera in mode 0, the ai in mode 1, and the goal in mode 2. Drag the mouse to rotate camera. Set modes by pressing the corresponding number. Press enter or return to have the ai search. I accidentally made the obstacle too large, but this does not impact the algorithm much.<br>
-				<p>(60) An animation of a point-like (zero size), game character is in a large 20m x 20m room. The character starts at the bottom left (-9,-9) and wishes to go to the top right (9,9). There is a single obstacle in the room, represented by a circle of radius 2 meters at coordinates (0,0). Use a probabilistic roadmap (PRM) to plan a path for the agent from the start to the goal.<br>
-				(5) Circular agent (with extent) (consider replacing with 10 points for spherical objects in 3D space)<br>
-				(5) Submission videos demonstrating results<br>
-				(5) 3D rendering of scenario and characters<br>
-				(5) Allow the user to select start and goal at run time (Your position is a moving goal)</p>
-
-				<h2>A* with multiple Obstacles</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/WCgzUL_ksjU"></iframe><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/dijkstra_astar_comp">Source</a><br>
-				Using Dijkstra's algorithm and Astar with a Probabilistic Road Map to navigate a 3D space. The large green sphere is the goal, the large red sphere is the ai, the large black sphere are obstacles, and the small blue spheres are the points found by the probabilistic road map. Use WASD to move the camera in mode 0, the ai in mode 1, and the goal in mode 2. Drag the mouse to rotate camera. Set modes by pressing the corresponding number. Press enter or return to have the ai search. Press r to reset the ai's position. Press spacebar to swap between using dijkstra's algorithm and astar. In the video, both algorithms find the same path, but Astar ound it in 23 miliseconds, while dijkstra's algorithm found it in 88 milliseconds.<br>
-				<p>(5) Implement A* for graph search, must document performance improvement<br>
-				(5) Multiple Obstacles<br>
-				Circular agent (with extent) (spherical)<br>
-				Submission videos demonstrating results<br>
-				3D rendering of scenario and characters</p>
-			</div>
-
-			<button type="button" onclick="i='hw4';if(document.getElementById(i).style.display=='none'){document.getElementById(i).style.display=''}else{document.getElementById(i).style.display='none'}">Homework 4</button><br>
-			<div id="hw4" style="display:">
-				(Using 1 grace day)
-				<h2>Crowd Simulation</h2>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/-tAxrpoO1zs"></iframe><br>
-				3D flocking algorithm using Boids simulation model. Each boid is represented as a blue sphere with a smaller green sphere used to visually track the direction vector. The 3 rules used are:<br>
-				1. boids fly to perceived flock center<br>
-				2. boids avoid other boids<br>
-				3. boids match flock direction<br>
-				Flock center and direction are calculated by looking at each boids' local neighbors, changing the size of this parameter changes the overall flock sizes.<br>
-				Avoiding other boids uses a 1/x function to determine the multiplier applied to the vector between 2 boids. This means the closer the boids are, the more 'force' repells them. The nearby boids calculation for this rule uses a smaller size than the first and third rules.<br>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/YJmGi0JbRNE"></iframe><br>
-				In this video we see direction propagation inside a boids flock, as it starts in one end of the formation and propagates throughout. Notice how the boids maintain a respectable distance from each other.<br>
-				<br>
-				<h3>Where it Breaks Down</h3>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/8zLuMWKqZ8M"></iframe><br>
-				This video shows 2 boids in direct opposition repelling each other perfecty, as there are no forces to apply variation that would allow them to align.<br>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/Vnkp00CM2OY"></iframe><br>
-				This video shows the 'strength' of the repelling force, these boids are not perfectly aligned, yet as they get closer the repelling force of rule 2 and the flock direction variable from rule 3 combine to make he boids swerve away from eachother instead of combining.<br>
-				In addition, the boids jitter a great deal, especially when Rule 2 comes into play. This could be fixed by implementing a maximum turning speed for each boid which should help smooth the way they turn, and implement a better algorithm for dealing with boids intruding too far into each others' space.<br>
-				<br>
-				<h3>Obstacles and Pathfinding</h3>
-
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/vgeY1NwckBI"></iframe><br>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/IMey6_tiixA"></iframe><br>
-				In these videos, black obstacles have been added, along with the a* algorithm from homework 3. To have the boids properly interact with these new objects, 2 new rules are required:<br>
-				4. boids want to travel to some point on the path<br>
-				5. boids want to avoid objects<br>
-				Rule 4 is simply the direction vector pointing to the next point on the path returned by the A* algorithm, and Rule 5 is simply a copy of rule 2, only instead of summing the local boids, uses all objects.
-				One global path is used for all boids, updated to path to a random point in the obstacle maze whenever the end is reached. This path is shown as a red line, a small red sphere marking the current node the boids are pathing to. Notice how even with these new rules, the boids still travel in flocks.<br>
-				<br>
-				<h3>Where it Breaks Down</h3>
-
-				You may have noticed in the earlier videos, boids will get stuck on the black obstacles, bouncing back and forth on them, slowly moving around it. This si due to the other Rules upon the boid overpowering Rule 5 until Rule 5 overpowers them, creating a very fast flip-flop effect in the direction vector.<br>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/CHf1cKatl48"></iframe><br>
-				Very occasionally, the point picked randomly by the A* algorithm will situate the boids such that the function used to determine whether the goal is reached will fail to register. This function simply determines if for each boid if the distance from the boid to its perceived flock center is larger than the distance from the current path node to the perceived flock center. This will produce jittery behaviour as the boids try to situate themselves as close as possible to the node wild obeying all the other rules.<br>
-				<br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/boids">Boids Source</a><br>
-				<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/boids_obstacles_pathing">Boids with Obstacles Source</a><br>
-				<p>(90) Requirements: Implement a local interaction/collision avoidance technique (Boids, Helbing, RVO/ORCA, TTC-forces, etc.). Find 2 or 3 scenarios showing interesting interactions between the agents. Implement a global navigation strategy for the agents (PRM/A*, RRT, etc.). Your roadmap needs to account for the extent of the agents. Show 2 or 3 scenarios of groups of agents successfully navigating through environments with local minima. Find a scenario where your overall simulation breaks and produces odd behavior.<br>
-				(10) Support full 3D navigation (e.g., flocking planes with 3D obstacles)</p>
-				<br>
-				<iframe width="640" height="480" src="https://www.youtube.com/embed/WNAufgNfHjE"></iframe><br>
-				They're kinda relaxing to watch...<br>
+							You may have noticed in the earlier videos, boids will get stuck on the black obstacles, bouncing back and forth on them, slowly moving around it. This is due to the other Rules upon the boid overpowering Rule 5 until Rule 5 overpowers them, creating a very fast flip-flop effect in the direction vector.<br>
+							<iframe width="640" height="480" src="https://www.youtube.com/embed/CHf1cKatl48"></iframe><br>
+							Very occasionally, the point picked randomly by the A* algorithm will situate the boids such that the function used to determine whether the goal is reached will fail to register. This function simply determines if for each boid if the distance from the boid to its perceived flock center is larger than the distance from the current path node to the perceived flock center. This will produce jittery behaviour as the boids try to situate themselves as close as possible to the node wild obeying all the other rules.<br>
+							<br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/boids">Boids Source</a><br>
+							<a href="https://github.com/Clarvel/CSCI5611/tree/gh-pages/boids_obstacles_pathing">Boids with Obstacles Source</a><br>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
